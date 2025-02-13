@@ -1,11 +1,12 @@
-export default function ProductCard() {
-    return (
-      <div className="p-4 border rounded-lg">
-        <img src="/candle.jpg" alt="Luxury Candle" className="w-full h-48 object-cover" />
-        <h2 className="text-lg font-bold">Luxury Soy Candle</h2>
-        <p>$29.99</p>
-        <button className="bg-blue-600 text-white p-2 mt-2">Add to Cart</button>
-      </div>
-    );
-  }
-  
+const ProductCard = ({ product }) => {
+  return (
+    <div className="border p-4 rounded-lg">
+      <img src={product.imageUrl} alt={product.name} className="w-full h-64 object-cover" />
+      <h3 className="text-xl font-semibold">{product.name}</h3>
+      <p className="text-sm">{product.description}</p>
+      <p className="text-lg font-bold">${product.price}</p>
+    </div>
+  );
+};
+
+export default ProductCard;

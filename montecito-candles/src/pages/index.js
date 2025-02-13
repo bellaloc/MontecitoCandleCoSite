@@ -1,17 +1,28 @@
+import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
-import Footer from '../components/Footer';
+import { fetchProducts } from '../lib/api';
 
-export default function Home() {
+const Home = ({ products }) => {
   return (
     <div>
+      <Head>
+        <title>Montecito Candle Co.</title>
+        <meta name="description" content="Luxury Candles E-Commerce" />
+      </Head>
       <Navbar />
-      <main className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold">Welcome to Montecito Candles</h1>
-        <p>Luxury hand-poured candles made with love.</p>
-        <ProductCard />
-      </main>
-      <Footer />
+      <div className="grid grid-cols-3 gap-4">
+        {products.map((product) => (
+          <ProductCard key={product._id} product={product} />
+        ))}
+      </div>
     </div>
   );
+};
+
+export async function getServerSideProps() {
+  const products = await fetchProducts();
+  return { props: { products } };
 }
+
+export default Home;
