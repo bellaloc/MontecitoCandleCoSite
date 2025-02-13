@@ -10,7 +10,11 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+// Add this to your server.js file
+app.get('/', (req, res) => {
+    res.send('Server is up and running!');
+  });
+  
 // Use the correct environment variable for MongoDB URI
 console.log("MongoDB URI:", process.env.MONGO_URI); // Use MONGO_URI as defined in the .env file
 
