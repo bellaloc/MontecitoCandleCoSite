@@ -8,7 +8,7 @@ const Home = ({ products }) => {
     <div>
       <Head>
         <title>Montecito Candle Co.</title>
-        <meta name="description" content="Luxury Candles E-Commerce" />
+        <meta name="description" content="Welcome to Montecito Candles!" />
       </Head>
       <Navbar />
       <div className="grid grid-cols-3 gap-4">

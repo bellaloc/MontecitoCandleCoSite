@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import { useRouter } from 'next/router';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 const Checkout = () => {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   const handleCheckout = async () => {
     setLoading(true);

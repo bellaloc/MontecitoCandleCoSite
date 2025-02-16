@@ -1,4 +1,6 @@
-const ProductCard = ({ product }) => {
+import Link from "next/link";
+
+export default function ProductCard({ product }) {
   return (
     <div className="border p-4 rounded-lg">
       <img src={product.imageUrl} alt={product.name} className="w-full h-64 object-cover" />
@@ -7,6 +9,4 @@ const ProductCard = ({ product }) => {
       <p className="text-lg font-bold">${product.price}</p>
     </div>
   );
-};
-
-export default ProductCard;
+}
