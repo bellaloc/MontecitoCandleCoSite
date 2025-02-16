@@ -1,21 +1,197 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Basic body styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+/* Container for the entire page */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Global typography */
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+  color: #222;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Style for images */
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Main header section */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url('https://images.unsplash.com/photo-1601275579672-9fd1a76d05ab') no-repeat center center/cover;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.header .cta-button {
+  background-color: #fcbf49;
+  padding: 15px 30px;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.header .cta-button:hover {
+  background-color: #f59e0b;
+}
+
+/* Main content area */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.card {
+  width: 30%;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.card .card-body {
+  padding: 20px;
+}
+
+.card .card-body h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.card .card-body p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.card .card-body button {
+  background-color: #fcbf49;
+  padding: 10px 20px;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.card .card-body button:hover {
+  background-color: #f59e0b;
+}
+
+/* Footer section */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+}
+
+.footer a:hover {
+  color: #fcbf49;
+}
+
+/* Responsive design for mobile and tablet */
+@media only screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1.1rem;
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .card img {
+    height: 250px;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@media only screen and (max-width: 480px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .footer {
+    padding: 20px 10px;
+  }
 }
